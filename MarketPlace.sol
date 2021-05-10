@@ -22,7 +22,7 @@ contract MarketPlace {
     }
 
     function buy(address _seller, address _buyer, uint _price) public payable {
-        require(_price <=balances[buyer], "Insufficient Balance");
+        require(_price <=balances[_buyer], "Insufficient Balance");
         State = StateType.ItemPurchased;
         balances[_buyer] -= _price;
         balances[_seller] += _price;
